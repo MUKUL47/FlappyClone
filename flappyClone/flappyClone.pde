@@ -51,7 +51,7 @@ image(Obstacle2B,X1--,h,50,h1); image(Obstacle2T,X1--,-100,50,h1T);
 if(X1<-100){ X1 = 460;  h1 = random(350,600); h = 800-h1; h1T = h; T2 = true;}
 }                                               
 
-void gameOver(){ if( (abs(X-130)<5 && (H-(birdY+88)<0 || (birdY+150)-H1T<0)) || (abs(X1-130)<5 && (h-(birdY+88)<0 || (birdY+150)-h1T<0)) || birdY >= 415 ){  noLoop(); loop(); reset();} }
+void gameOver(){ if(  (abs(X-130)<38 && (H-(birdY+88)<0 || (birdY+150)-H1T<0)) || (abs(X1-130)<38 && (h-(birdY+88)<0 || (birdY+150)-h1T<0)) || birdY >= 415 || birdY < -115){  noLoop(); loop(); reset();} }
 void reset() { 
   birdY = 230 ; Y = 0 ; X = 460  ; X1 = 760;  H1 = random(350,600) ; H = 800-H1;  H1T = H ; h1 = random(350,600) ; h = 800-h1;  h1T = h ; 
   if(GlobalScore<Score){ GlobalScore=Score; } Score = 0 ; T1 = T2 = true ; 
